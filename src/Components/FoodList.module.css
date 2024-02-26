@@ -1,0 +1,17 @@
+.paginationButtonContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationButton{
+    background-color: grey;
+    border: none;
+    color: black;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 4px;
+}
