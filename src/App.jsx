@@ -4,7 +4,6 @@ import Search from "./Components/Search";
 import Nav from "./Components/Nav";
 import { Outlet } from "react-router-dom";
 
-// Dynamically import FoodList component
 const FoodList = React.lazy(() => import("./Components/FoodList"));
 
 export default function App() {
