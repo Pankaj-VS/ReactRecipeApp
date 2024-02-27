@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import styles from "./foodDetails.module.css";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom/dist";
 
-export default function FoodDetails({ foodId }) {
+export default function FoodDetails() {
+  const { foodId } = useParams();
   const [food, setFood] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (foodId) {
-      // Make API call only if foodId is present
       async function fetchFood() {
         setIsLoading(true);
         const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
@@ -59,7 +60,7 @@ export default function FoodDetails({ foodId }) {
           </span>
         </div>
         <h2 className={styles.heading}>Ingredients</h2>
-        <ItemList food={food} isLoading={isLoading}/>
+        <ItemList food={food} isLoading={isLoading} />
         <h2 className={styles.heading}>Instructions</h2>
         <div className={styles.recipeInstructions}>
           <ol>

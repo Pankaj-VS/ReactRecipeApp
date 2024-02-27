@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom/dist";
 import styles from "./foodItem.module.css";
 
-export default function FoodItem({ foodItem, setFoodId }) {
+export default function FoodItem({ foodItem }) {
   return (
     <div className={styles.itemContainer}>
       <img className={styles.itemImage} src={foodItem.image} alt="" />
@@ -8,14 +9,9 @@ export default function FoodItem({ foodItem, setFoodId }) {
         <p className={styles.itemName}>{foodItem.title}</p>
       </div>
       <div className={styles.buttonContainer}>
-        <button
-          onClick={() => {
-            setFoodId(foodItem.id);
-          }}
-          className={styles.itemButton}
-        >
+        <Link to={`/food-details/${foodItem.id}`} className={styles.itemButton}>
           View Recipe
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -21,7 +21,9 @@ export default function Search({ foodData, setFoodData }) {
         onChange={(e) => setQuery(e.target.value)}
         type="text"
       />
-      <button className ={styles.button} onClick={handleSearch}>Search</button>
+      <button className={styles.button} onClick={handleSearch}>
+        Search
+      </button>
     </div>
   );
 }
